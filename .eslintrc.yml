@@ -8,7 +8,4 @@ rules:
   space-before-function-paren:
     - error
     - always
-  operator-linebreak:
-    - error
-    - before
   no-void: off
