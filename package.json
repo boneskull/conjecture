@@ -1,0 +1,25 @@
+{
+  "name": "conjecture",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "Christopher Hiller <boneskull@boneskull.com> (https://boneskull.com/)",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-xo": "^0.18.2"
+  },
+  "dependencies": {
+    "fullname": "^3.3.0",
+    "git-config-path": "^1.0.1",
+    "git-user-email": "^0.2.2",
+    "git-user-name": "^1.2.0",
+    "github-username": "^4.0.0",
+    "username": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "eslint index.js"
+  }
+}
