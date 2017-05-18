@@ -16,8 +16,8 @@ const fullName = require('fullname');
 function guessEmail () {
   let email;
   try {
-    email = gitEmail({path: gitConfigPath()})
-      || gitEmail({path: gitConfigPath('global')});
+    email = gitEmail({path: gitConfigPath()}) ||
+      gitEmail({path: gitConfigPath('global')});
   } catch (e) {
     return Promise.reject(e);
   }
@@ -53,8 +53,13 @@ function guessGitHubUsername (email) {
  * @returns {string} Full name of author, if found
  */
 function guessAuthor () {
-  return Promise.resolve(gitUserName({path: gitConfigPath()})
-    || gitUserName({path: gitConfigPath('global')}) || fullName());
+  function getAuthor (path) {
+    return path && gitUserName({path});
+  }
+
+  return getAuthor(gitConfigPath()) ||
+    getAuthor(gitConfigPath('global')) ||
+    fullName();
 }
 
 module.exports = {
